@@ -2,12 +2,14 @@
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import ContactCTA from "@/components/sections/ContactCTA.astro";
 import SectorGrid from "@/components/sections/SectorGrid.astro";
+import BackLink from "@/components/ui/BackLink.astro";
 import { seo } from "@/data/seo";
 ---
 
 <BaseLayout title={seo.pages.sectores.title} description={seo.pages.sectores.description}>
   <section class="section-hk bg-white">
     <div class="container-hk max-w-4xl">
+      <BackLink fallback="/" />
       <p class="eyebrow">Sectores</p>
       <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Soluciones para casas, condominios, empresas y bodegas.</h1>
       <p class="mt-6 text-lg text-hk-muted">

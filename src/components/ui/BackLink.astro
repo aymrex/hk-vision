@@ -1,0 +1,32 @@
+---
+import { ArrowLeft } from "@lucide/astro";
+
+type Props = {
+  fallback?: string;
+  label?: string;
+};
+
+const { fallback = "/", label = "Volver" } = Astro.props;
+---
+
+<a
+  class="mb-8 flex min-h-11 w-fit items-center gap-2 rounded-lg border border-hk-border bg-white px-4 py-2 font-heading text-sm font-semibold text-hk-primary transition duration-200 hover:border-hk-accent hover:text-hk-primary-mid focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-hk-accent"
+  href={fallback}
+  data-back-link
+>
+  <ArrowLeft size={18} aria-hidden="true" />
+  <span>{label}</span>
+</a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>("[data-back-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (window.history.length <= 1) {
+        return;
+      }
+
+      event.preventDefault();
+      window.history.back();
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import ContactCTA from "@/components/sections/ContactCTA.astro";
+import BackLink from "@/components/ui/BackLink.astro";
 import { seo } from "@/data/seo";
 ---
 
@@ -8,6 +9,7 @@ import { seo } from "@/data/seo";
   <section class="section-hk bg-hk-surface">
     <div class="container-hk grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
+        <BackLink fallback="/" />
         <p class="eyebrow">Nosotros</p>
         <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Tecnologia aplicada con criterio, no por moda.</h1>
       </div>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/components/layout/BaseLayout.astro";
+import BackLink from "@/components/ui/BackLink.astro";
 import ContactCard from "@/components/ui/ContactCard.astro";
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import ContactForm from "@/forms/ContactForm";
@@ -9,6 +10,7 @@ import { seo } from "@/data/seo";
 <BaseLayout title={seo.pages.contacto.title} description={seo.pages.contacto.description}>
   <section class="section-hk bg-hk-surface">
     <div class="container-hk">
+      <BackLink fallback="/" />
       <SectionHeader
         eyebrow="Contacto"
         title="Cuéntanos que necesitas proteger o construir."

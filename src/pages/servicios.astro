@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/components/layout/BaseLayout.astro";
 import ContactCTA from "@/components/sections/ContactCTA.astro";
+import BackLink from "@/components/ui/BackLink.astro";
 import ServiceCard from "@/components/ui/ServiceCard.astro";
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 import { seo } from "@/data/seo";
@@ -10,6 +11,7 @@ import { services } from "@/data/services";
 <BaseLayout title={seo.pages.servicios.title} description={seo.pages.servicios.description}>
   <section class="section-hk bg-hk-surface">
     <div class="container-hk">
+      <BackLink fallback="/" />
       <SectionHeader
         eyebrow="Servicios"
         title="Seguridad, tecnologia y software con una mirada integral."
