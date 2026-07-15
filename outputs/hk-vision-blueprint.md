@@ -24,17 +24,17 @@ HK Vision sera un sitio corporativo en espanol para captar clientes en Santiago 
 
 | Layer | Technology | Why |
 | --- | --- | --- |
-| Framework | Astro 5 | Excelente para sitios corporativos rapidos, SEO, paginas estaticas y bajo JavaScript inicial. |
+| Framework | Astro 7 | Excelente para sitios corporativos rapidos, SEO, paginas estaticas y bajo JavaScript inicial. Se actualizo desde Astro 5 por alertas de seguridad en dependencias. |
 | Language | TypeScript | Seguridad de tipos y mantenimiento mas claro. |
 | Styling | Tailwind CSS v4 | Design tokens consistentes, responsive rapido y buen control visual. |
 | Components | Astro components + React islands puntuales | Astro para paginas estaticas; React solo donde haya interactividad real. |
 | 3D | Three.js en una island React o vanilla module | Permite hero 3D premium con carga controlada y fallback. |
-| Forms | Endpoint serverless o servicio externo inicial | Permite captar leads sin panel administrativo. |
+| Forms | Formulario estatico con mailto en v1 | Evita backend simulado y dependencias server innecesarias hasta configurar un proveedor real. |
 | Database | N/A en v1 | El sitio no necesita persistencia propia al inicio. |
 | ORM | N/A | Sin base de datos en v1. |
 | Auth | N/A | No hay login ni panel privado. |
 | Payments | N/A | No se vendera online en v1. |
-| Hosting | Vercel o Cloudflare Pages | Deploy simple, CDN, preview deployments y dominio personalizado. |
+| Hosting | Vercel o Cloudflare Pages | Deploy estatico simple, CDN, preview deployments y dominio personalizado. |
 | Package Manager | npm | Suficiente y simple para este proyecto. |
 
 ## 3. Directory Structure
@@ -92,8 +92,6 @@ hk-vision/
       nosotros.astro
       contacto.astro
       404.astro
-    pages/api/
-      contact.ts
     styles/
       globals.css
 ```
@@ -132,7 +130,7 @@ No aplica SQL/ORM. Usar archivos TypeScript en `src/data/`.
 
 | Method | Path | Description | Auth |
 | --- | --- | --- | --- |
-| POST | /api/contact | Recibe leads del formulario de contacto y envia notificacion por correo. | Public |
+| N/A | N/A | En v1 no hay API. El formulario prepara un correo `mailto:` y se debe conectar a un proveedor real antes de prometer envio automatico. | Public |
 
 ### Critical Endpoint Details
 
@@ -395,17 +393,18 @@ npx astro add react
 
 Crear:
 - `src/forms/ContactForm.tsx`
-- `src/pages/api/contact.ts`
 
 Verification:
 - Validacion clara.
-- Estados loading/success/error.
+- Estados success/error.
 - Inputs con labels visibles.
 - Botones de WhatsApp, telefono y correo funcionando.
 
-**Step 10: Email Delivery**
+**Step 10: Email Delivery futura**
 
-Opcion recomendada:
+No implementar backend simulado. Cuando existan dominio y correo real, agregar proveedor de email.
+
+Opcion recomendada futura:
 
 ```bash
 npm install resend
@@ -416,7 +415,7 @@ Variables:
 - `CONTACT_TO_EMAIL`
 - `CONTACT_FROM_EMAIL`
 
-Verification:
+Verification futura:
 - Formulario envia correo de prueba.
 - No se exponen secretos al cliente.
 
@@ -601,7 +600,7 @@ Security headers:
 | `emil-design-eng` | Al pulir microinteracciones y motion. | Eleva detalles de interaccion y transiciones. |
 | `vercel:agent-browser-verify` or `browser:control-in-app-browser` if available | Despues de levantar dev server. | Verificar visualmente layout, consola y responsive. |
 | `vercel:deployments-cicd` if using Vercel | Al preparar deploy. | Mantener buenas practicas de despliegue. |
-| `codex-security:security-scan` if authorized | Antes de produccion si hay formulario/API. | Revisar riesgos del endpoint de contacto. |
+| `codex-security:security-scan` if authorized | Antes de agregar backend real o integraciones de correo. | Revisar riesgos de formularios, secretos y validacion. |
 
 ## 15. AGENTS.md for Target Project
 
@@ -620,13 +619,13 @@ Sitio corporativo multipagina para captar clientes en Santiago para instalacion 
 
 ## Tech Stack
 
-Astro 5 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloudflare Pages.
+Astro 7 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloudflare Pages.
 
 ## Architecture
 
 ### Directory Structure
 
-- `src/pages/` - Public routes and contact API endpoint.
+- `src/pages/` - Public routes for the site.
 - `src/components/layout/` - Base layout, header and footer.
 - `src/components/sections/` - Page sections such as hero, services, sectors and CTA.
 - `src/components/ui/` - Reusable presentational components.
@@ -637,7 +636,7 @@ Astro 5 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloud
 
 ### Data Flow
 
-Most content is static and loaded from TypeScript data files. The contact form validates in the client, posts to `/api/contact`, validates again server-side and sends an email through the configured provider.
+Most content is static and loaded from TypeScript data files. The contact form validates in the client and prepares a `mailto:` message in v1. Add a real backend/email provider only when domain and sender configuration exist.
 
 ### Key Patterns
 

@@ -17,13 +17,13 @@ Sitio corporativo multipagina para captar clientes en Santiago para instalacion 
 
 ## Tech Stack
 
-Astro 5 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloudflare Pages.
+Astro 7 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloudflare Pages.
 
 ## Architecture
 
 ### Directory Structure
 
-- `src/pages/` - Rutas publicas y endpoint del formulario de contacto.
+- `src/pages/` - Rutas publicas del sitio.
 - `src/components/layout/` - Layout base, header y footer.
 - `src/components/sections/` - Secciones principales del sitio.
 - `src/components/ui/` - Componentes reutilizables de presentacion.
@@ -40,6 +40,7 @@ Astro 5 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloud
 - Mantener Three.js aislado, optimizado y con fallback.
 - Centralizar textos repetidos en archivos de datos.
 - Priorizar SEO local para Santiago.
+- Mantener el sitio estatico hasta que exista una integracion real y segura para envio de formularios.
 
 ## Design System
 

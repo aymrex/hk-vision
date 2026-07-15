@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import Button from "@/components/ui/Button.astro";
+import { whatsappHref } from "@/data/contact";
+import { seo } from "@/data/seo";
+import { getService } from "@/data/services";
+
+const service = getService("software");
+---
+
+<BaseLayout title={seo.pages.software.title} description={seo.pages.software.description}>
+  <section class="section-hk bg-hk-surface">
+    <div class="container-hk grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="eyebrow">Software a medida</p>
+        <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Herramientas digitales para procesos concretos.</h1>
+        <p class="mt-6 text-lg text-hk-muted">{service?.description}</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href={whatsappHref} label="Hablar de un proyecto" external />
+          <Button href="/contacto" label="Enviar detalle" variant="secondary" />
+        </div>
+      </div>
+      <div class="surface-panel p-7">
+        <h2 class="heading-hk text-2xl">Se puede construir</h2>
+        <ul class="mt-6 grid gap-4">
+          {service?.benefits.map((benefit) => <li class="rounded-lg bg-white p-4 text-hk-text">{benefit}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <ContactCTA />
+</BaseLayout>

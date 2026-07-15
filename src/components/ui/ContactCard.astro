@@ -1,0 +1,54 @@
+---
+import { Mail, MapPin, Phone, MessageCircle } from "@lucide/astro";
+import { contact, whatsappHref } from "@/data/contact";
+
+const items = [
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    text: "Respuesta directa para cotizaciones.",
+    href: whatsappHref,
+    label: "Escribir por WhatsApp",
+  },
+  {
+    icon: Phone,
+    title: "Telefono",
+    text: contact.phoneDisplay,
+    href: `tel:${contact.phoneHref}`,
+    label: "Llamar ahora",
+  },
+  {
+    icon: Mail,
+    title: "Correo",
+    text: contact.email,
+    href: `mailto:${contact.email}`,
+    label: "Enviar correo",
+  },
+  {
+    icon: MapPin,
+    title: "Zona",
+    text: contact.city,
+    href: "/sectores",
+    label: "Ver sectores",
+  },
+];
+---
+
+<div class="grid gap-4 md:grid-cols-2">
+  {
+    items.map(({ icon: Icon, title, text, href, label }) => (
+      <a class="surface-panel group block p-5 transition duration-200 hover:-translate-y-1 hover:border-hk-accent" href={href}>
+        <div class="flex gap-4">
+          <span class="flex size-11 shrink-0 items-center justify-center rounded-lg bg-hk-surface text-hk-primary-mid">
+            <Icon size={22} aria-hidden="true" />
+          </span>
+          <span>
+            <span class="block font-heading text-lg font-semibold text-hk-primary">{title}</span>
+            <span class="mt-1 block text-sm text-hk-muted">{text}</span>
+            <span class="mt-3 block text-sm font-semibold text-hk-primary-mid">{label}</span>
+          </span>
+        </div>
+      </a>
+    ))
+  }
+</div>

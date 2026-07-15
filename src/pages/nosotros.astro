@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import { seo } from "@/data/seo";
+---
+
+<BaseLayout title={seo.pages.nosotros.title} description={seo.pages.nosotros.description}>
+  <section class="section-hk bg-hk-surface">
+    <div class="container-hk grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="eyebrow">Nosotros</p>
+        <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Tecnologia aplicada con criterio, no por moda.</h1>
+      </div>
+      <div class="surface-panel p-7 text-lg text-hk-muted">
+        <p>
+          HK Vision nace para ayudar a personas y organizaciones a proteger espacios, informacion y procesos con soluciones claras.
+        </p>
+        <p class="mt-5">
+          El enfoque es simple: entender el riesgo, proponer una solucion proporcional e implementarla de forma ordenada. Eso aplica tanto para CCTV como para ciberseguridad y software.
+        </p>
+      </div>
+    </div>
+  </section>
+  <ContactCTA />
+</BaseLayout>

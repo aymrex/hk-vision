@@ -1,0 +1,24 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import ServiceCard from "@/components/ui/ServiceCard.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import { seo } from "@/data/seo";
+import { services } from "@/data/services";
+---
+
+<BaseLayout title={seo.pages.servicios.title} description={seo.pages.servicios.description}>
+  <section class="section-hk bg-hk-surface">
+    <div class="container-hk">
+      <SectionHeader
+        eyebrow="Servicios"
+        title="Seguridad, tecnologia y software con una mirada integral."
+        description="HK Vision combina soluciones fisicas y digitales para resolver necesidades reales de proteccion, continuidad y gestion."
+      />
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {services.map((service) => <ServiceCard service={service} />)}
+      </div>
+    </div>
+  </section>
+  <ContactCTA />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import Button from "@/components/ui/Button.astro";
+import { whatsappHref } from "@/data/contact";
+---
+
+<section class="section-hk bg-[linear-gradient(135deg,#1b4f72,#2e86c1)] text-white">
+  <div class="container-hk grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+    <div>
+      <p class="font-heading text-sm font-bold uppercase tracking-[0.08em] text-white/74">Cotizacion</p>
+      <h2 class="mt-3 max-w-3xl font-heading text-3xl font-bold leading-tight md:text-5xl">
+        Conversemos sobre el punto debil antes de comprar tecnologia.
+      </h2>
+      <p class="mt-5 max-w-2xl text-lg text-white/78">
+        Un buen proyecto empieza con una evaluacion honesta de riesgo, presupuesto y prioridad.
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row md:flex-col">
+      <Button href={whatsappHref} label="Hablar por WhatsApp" variant="secondary" external />
+      <Button href="/contacto" label="Ir a contacto" variant="ghost" />
+    </div>
+  </div>
+</section>

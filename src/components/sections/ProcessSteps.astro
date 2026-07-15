@@ -1,0 +1,43 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+
+const steps = [
+  {
+    title: "Diagnostico",
+    text: "Se revisan necesidades, accesos, zonas criticas y objetivo del proyecto.",
+  },
+  {
+    title: "Propuesta",
+    text: "Se define una solucion clara, con alcance, equipos o componentes y prioridades.",
+  },
+  {
+    title: "Implementacion",
+    text: "Instalacion, configuracion, pruebas y ajustes con foco en estabilidad.",
+  },
+  {
+    title: "Acompanamiento",
+    text: "Orientacion posterior para uso, continuidad y mejoras futuras.",
+  },
+];
+---
+
+<section class="section-hk bg-white">
+  <div class="container-hk">
+    <SectionHeader
+      eyebrow="Proceso"
+      title="Una forma de trabajo simple y verificable."
+      description="La idea no es vender tecnologia por vender. Primero se entiende el problema, despues se implementa lo necesario."
+    />
+    <div class="mt-12 grid gap-4 md:grid-cols-4">
+      {
+        steps.map((step, index) => (
+          <article class="border-l border-hk-border pl-5">
+            <span class="font-heading text-sm font-bold text-hk-accent">0{index + 1}</span>
+            <h3 class="heading-hk mt-3 text-xl">{step.title}</h3>
+            <p class="mt-3 text-sm text-hk-muted">{step.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

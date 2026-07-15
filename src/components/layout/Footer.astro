@@ -1,0 +1,36 @@
+---
+import { contact, whatsappHref } from "@/data/contact";
+import { services } from "@/data/services";
+---
+
+<footer class="border-t border-hk-border bg-hk-primary text-white">
+  <div class="container-hk grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <img src="/images/logo-hk-vision.svg" alt="HK Vision" class="h-14 w-auto rounded bg-white p-1" />
+      <p class="mt-5 max-w-md text-white/78">
+        Seguridad fisica, proteccion digital y desarrollo de software para clientes en Santiago.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-heading text-lg font-semibold">Servicios</h2>
+      <ul class="mt-4 space-y-2 text-white/78">
+        {services.map((service) => <li><a class="hover:text-white" href={service.href}>{service.title}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-heading text-lg font-semibold">Contacto</h2>
+      <ul class="mt-4 space-y-2 text-white/78">
+        <li><a class="hover:text-white" href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a></li>
+        <li><a class="hover:text-white" href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a></li>
+        <li><a class="hover:text-white" href={`mailto:${contact.email}`}>{contact.email}</a></li>
+        <li>{contact.city}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/14 py-5">
+    <div class="container-hk flex flex-col gap-2 text-sm text-white/65 md:flex-row md:items-center md:justify-between">
+      <p>© {new Date().getFullYear()} HK Vision. Todos los derechos reservados.</p>
+      <p>Web corporativa en construccion.</p>
+    </div>
+  </div>
+</footer>

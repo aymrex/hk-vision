@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 112" role="img" aria-label="HK Vision">
+  <rect width="360" height="112" rx="8" fill="#FFFFFF"/>
+  <path d="M30 16h70v39c0 25-16 40-35 48-19-8-35-23-35-48V16z" fill="#1B4F72"/>
+  <path d="M40 26h50v28c0 17-11 28-25 34-14-6-25-17-25-34V26z" fill="#FFFFFF" opacity=".96"/>
+  <path d="M48 40h8v12h17V40h8v31h-8V59H56v12h-8V40z" fill="#2C3E50"/>
+  <path d="M82 40h8L78 56l12 15h-8L70 56 82 40z" fill="#2E86C1"/>
+  <circle cx="92" cy="28" r="7" fill="#3AAED8"/>
+  <text x="126" y="52" fill="#2C3E50" font-family="Arial, sans-serif" font-size="34" font-weight="700">HK Vision</text>
+  <text x="128" y="78" fill="#2E86C1" font-family="Arial, sans-serif" font-size="15" font-weight="600">Seguridad, CCTV, ciberseguridad y software</text>
+</svg>

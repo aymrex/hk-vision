@@ -1,0 +1,20 @@
+---
+const points = [
+  "Soluciones pensadas para Santiago",
+  "Contacto por WhatsApp, correo, telefono y formulario",
+  "Enfoque en seguridad fisica y digital",
+  "Arquitectura preparada para crecer",
+];
+---
+
+<section class="bg-hk-primary py-10 text-white">
+  <div class="container-hk grid gap-5 md:grid-cols-4">
+    {
+      points.map((point) => (
+        <p class="border-l border-white/20 pl-4 font-heading text-lg font-semibold leading-snug text-white/92">
+          {point}
+        </p>
+      ))
+    }
+  </div>
+</section>

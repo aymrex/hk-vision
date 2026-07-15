@@ -1,0 +1,18 @@
+---
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import ServiceCard from "@/components/ui/ServiceCard.astro";
+import { services } from "@/data/services";
+---
+
+<section class="section-hk bg-white">
+  <div class="container-hk">
+    <SectionHeader
+      eyebrow="Servicios"
+      title="Soluciones conectadas para proteger y operar mejor."
+      description="La seguridad moderna no termina en una camara. HK Vision une vigilancia, proteccion digital y software cuando el problema lo requiere."
+    />
+    <div class="mt-12 grid gap-5 lg:grid-cols-3">
+      {services.map((service) => <ServiceCard service={service} />)}
+    </div>
+  </div>
+</section>

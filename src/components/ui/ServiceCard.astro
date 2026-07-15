@@ -1,0 +1,30 @@
+---
+import { CheckCircle2 } from "@lucide/astro";
+import Button from "./Button.astro";
+import type { Service } from "@/data/services";
+
+type Props = {
+  service: Service;
+};
+
+const { service } = Astro.props;
+---
+
+<article class="surface-panel flex h-full flex-col p-6 transition duration-200 hover:-translate-y-1 hover:border-hk-accent">
+  <p class="eyebrow">{service.eyebrow}</p>
+  <h3 class="heading-hk mt-3 text-2xl">{service.title}</h3>
+  <p class="mt-4 text-hk-muted">{service.summary}</p>
+  <ul class="mt-6 space-y-3">
+    {
+      service.benefits.slice(0, 3).map((benefit) => (
+        <li class="flex gap-3 text-sm text-hk-text">
+          <CheckCircle2 class="mt-0.5 shrink-0 text-hk-primary-mid" size={18} aria-hidden="true" />
+          <span>{benefit}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="mt-7">
+    <Button href={service.href} label="Ver servicio" variant="secondary" />
+  </div>
+</article>

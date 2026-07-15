@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #1b4f72;
+  --color-primary-mid: #2e86c1;
+  --color-accent: #3aaed8;
+  --color-text: #2c3e50;
+  --color-muted: #5d6d7e;
+  --color-background: #ffffff;
+  --color-surface: #f6fafd;
+  --color-border: #d8e6ef;
+  --color-success: #1e8e5a;
+  --color-danger: #c0392b;
+  --shadow-soft: 0 18px 55px rgba(27, 79, 114, 0.11);
+  color-scheme: light;
+}
+
+@theme {
+  --font-heading: "Lexend", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --color-hk-primary: #1b4f72;
+  --color-hk-primary-mid: #2e86c1;
+  --color-hk-accent: #3aaed8;
+  --color-hk-text: #2c3e50;
+  --color-hk-muted: #5d6d7e;
+  --color-hk-surface: #f6fafd;
+  --color-hk-border: #d8e6ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+body::selection {
+  background: rgba(58, 174, 216, 0.25);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  outline-color: var(--color-accent);
+  outline-offset: 3px;
+}
+
+.container-hk {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-hk {
+  padding-block: clamp(72px, 9vw, 120px);
+}
+
+.eyebrow {
+  color: var(--color-primary-mid);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading-hk {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.surface-panel {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(216, 230, 239, 0.95);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

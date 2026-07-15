@@ -47,12 +47,12 @@ Ese archivo contiene la arquitectura propuesta, estructura de paginas, stack tec
 
 ## Stack recomendado
 
-- Astro 5.
+- Astro 7.
 - TypeScript.
 - Tailwind CSS v4.
 - Three.js para animacion 3D controlada.
 - React islands solo para interactividad puntual, como formulario.
-- Vercel o Cloudflare Pages para despliegue.
+- Vercel o Cloudflare Pages para despliegue estatico.
 
 ## Estado actual
 

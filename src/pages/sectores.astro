@@ -1,0 +1,20 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import SectorGrid from "@/components/sections/SectorGrid.astro";
+import { seo } from "@/data/seo";
+---
+
+<BaseLayout title={seo.pages.sectores.title} description={seo.pages.sectores.description}>
+  <section class="section-hk bg-white">
+    <div class="container-hk max-w-4xl">
+      <p class="eyebrow">Sectores</p>
+      <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Soluciones para casas, condominios, empresas y bodegas.</h1>
+      <p class="mt-6 text-lg text-hk-muted">
+        La prioridad cambia segun el entorno. En una casa puede ser tranquilidad familiar; en una bodega, control de puntos ciegos; en una empresa, continuidad operacional.
+      </p>
+    </div>
+  </section>
+  <SectorGrid />
+  <ContactCTA />
+</BaseLayout>

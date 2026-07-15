@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import Hero3D from "@/components/sections/Hero3D.astro";
+import ProcessSteps from "@/components/sections/ProcessSteps.astro";
+import SectorGrid from "@/components/sections/SectorGrid.astro";
+import ServicesOverview from "@/components/sections/ServicesOverview.astro";
+import TrustBand from "@/components/sections/TrustBand.astro";
+import { seo } from "@/data/seo";
+---
+
+<BaseLayout title={seo.pages.home.title} description={seo.pages.home.description}>
+  <Hero3D />
+  <ServicesOverview />
+  <SectorGrid />
+  <ProcessSteps />
+  <TrustBand />
+  <ContactCTA />
+</BaseLayout>

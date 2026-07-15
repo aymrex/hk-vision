@@ -1,0 +1,74 @@
+---
+import Button from "@/components/ui/Button.astro";
+import { whatsappHref } from "@/data/contact";
+---
+
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f6fafd_58%,#eaf6fb_100%)]">
+  <div class="container-hk grid min-h-[calc(100dvh-80px)] items-center gap-10 py-14 lg:grid-cols-[1.02fr_0.98fr]">
+    <div class="relative z-10 max-w-3xl">
+      <p class="eyebrow">Seguridad y tecnologia en Santiago</p>
+      <h1 class="heading-hk mt-4 text-[clamp(2.6rem,6vw,5.25rem)] text-balance">
+        Proteccion fisica y digital con criterio tecnico.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-hk-muted md:text-xl">
+        Instalacion de camaras, CCTV, ciberseguridad y desarrollo de software para casas, condominios, empresas y bodegas.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href={whatsappHref} label="Cotizar por WhatsApp" external />
+        <Button href="/servicios" label="Ver servicios" variant="secondary" />
+      </div>
+      <dl class="mt-10 grid max-w-2xl grid-cols-3 gap-3">
+        <div class="rounded-lg border border-hk-border bg-white/75 p-4">
+          <dt class="text-sm text-hk-muted">Zona</dt>
+          <dd class="font-heading text-lg font-semibold text-hk-primary">Santiago</dd>
+        </div>
+        <div class="rounded-lg border border-hk-border bg-white/75 p-4">
+          <dt class="text-sm text-hk-muted">Canales</dt>
+          <dd class="font-heading text-lg font-semibold text-hk-primary">4 vias</dd>
+        </div>
+        <div class="rounded-lg border border-hk-border bg-white/75 p-4">
+          <dt class="text-sm text-hk-muted">Enfoque</dt>
+          <dd class="font-heading text-lg font-semibold text-hk-primary">Integral</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div data-scene-wrap class="relative min-h-[360px] lg:min-h-[560px]">
+      <div class="absolute inset-0 rounded-lg border border-hk-border bg-white/58 shadow-[0_30px_90px_rgba(27,79,114,0.13)]"></div>
+      <canvas id="security-scene" class="absolute inset-0 h-full w-full" aria-label="Animacion 3D abstracta de seguridad digital"></canvas>
+      <div class="pointer-events-none absolute inset-x-8 bottom-8 rounded-lg border border-hk-border bg-white/82 p-5 backdrop-blur">
+        <p class="font-heading text-sm font-semibold text-hk-primary">Cobertura, monitoreo y continuidad</p>
+        <p class="mt-1 text-sm text-hk-muted">Una visualizacion abstracta de red protegida y puntos criticos cubiertos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const canvas = document.querySelector<HTMLCanvasElement>("#security-scene");
+  if (canvas) {
+    const startScene = async () => {
+      try {
+        const { initSecurityScene } = await import("../../assets/3d/security-scene");
+        initSecurityScene(canvas);
+      } catch {
+        canvas.closest("[data-scene-wrap]")?.classList.add("is-reduced-motion");
+      }
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer.disconnect();
+            startScene();
+          }
+        },
+        { rootMargin: "160px" },
+      );
+      observer.observe(canvas);
+    } else {
+      startScene();
+    }
+  }
+</script>

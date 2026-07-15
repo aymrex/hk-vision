@@ -1,0 +1,77 @@
+---
+import { Menu, X } from "@lucide/astro";
+import { whatsappHref } from "@/data/contact";
+
+const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/sectores", label: "Sectores" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-hk-border/80 bg-white/92 backdrop-blur">
+  <a class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-hk-primary" href="#contenido">
+    Saltar al contenido
+  </a>
+  <div class="container-hk flex min-h-20 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3" aria-label="Ir al inicio de HK Vision">
+      <img src="/images/logo-hk-vision.svg" alt="HK Vision" class="h-12 w-auto" />
+    </a>
+
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Navegacion principal">
+      {
+        navItems.map((item) => (
+          <a class="font-heading text-sm font-semibold text-hk-text transition hover:text-hk-primary-mid" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a class="rounded-lg border border-hk-border px-4 py-2 font-heading text-sm font-semibold text-hk-primary transition hover:border-hk-accent" href="tel:+56900000000">
+        Llamar
+      </a>
+      <a class="rounded-lg bg-hk-primary-mid px-4 py-2 font-heading text-sm font-semibold text-white transition hover:bg-hk-primary" href={whatsappHref} target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
+    </div>
+
+    <button id="menu-toggle" class="inline-flex size-11 items-center justify-center rounded-lg border border-hk-border text-hk-primary lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+      <Menu class="menu-open" size={22} aria-hidden="true" />
+      <X class="menu-close hidden" size={22} aria-hidden="true" />
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden border-t border-hk-border bg-white lg:hidden" aria-label="Navegacion movil">
+    <div class="container-hk grid gap-2 py-5">
+      {
+        navItems.map((item) => (
+          <a class="rounded-lg px-3 py-3 font-heading font-semibold text-hk-text hover:bg-hk-surface" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+      <a class="mt-2 rounded-lg bg-hk-primary-mid px-4 py-3 text-center font-heading font-semibold text-white" href={whatsappHref} target="_blank" rel="noreferrer">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector("#menu-toggle");
+  const menu = document.querySelector("#mobile-menu");
+  const openIcon = document.querySelector(".menu-open");
+  const closeIcon = document.querySelector(".menu-close");
+
+  toggle?.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden", expanded);
+    openIcon?.classList.toggle("hidden", !expanded);
+    closeIcon?.classList.toggle("hidden", expanded);
+  });
+</script>

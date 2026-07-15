@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCard from "@/components/ui/ContactCard.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+import ContactForm from "@/forms/ContactForm";
+import { seo } from "@/data/seo";
+---
+
+<BaseLayout title={seo.pages.contacto.title} description={seo.pages.contacto.description}>
+  <section class="section-hk bg-hk-surface">
+    <div class="container-hk">
+      <SectionHeader
+        eyebrow="Contacto"
+        title="Cuéntanos que necesitas proteger o construir."
+        description="Puedes escribir por WhatsApp para una respuesta directa o usar el formulario si prefieres dejar el contexto completo."
+      />
+      <div class="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <ContactCard />
+        <ContactForm client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
