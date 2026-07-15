@@ -1,7 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HK Vision">
-  <rect width="64" height="64" rx="12" fill="#1B4F72"/>
-  <path d="M16 15h32v17c0 11-7.5 18-16 21-8.5-3-16-10-16-21V15z" fill="#FFFFFF" opacity=".96"/>
-  <path d="M22 24h5v7h10v-7h5v18h-5v-7H27v7h-5V24z" fill="#2C3E50"/>
-  <path d="M39 24h5l-7 9 7 9h-5l-7-9 7-9z" fill="#2E86C1"/>
-  <circle cx="48" cy="17" r="4" fill="#3AAED8"/>
+  <rect width="64" height="64" rx="14" fill="#24303C"/>
+  <path d="M32 7 53 15v18c0 15-9 24-21 29-12-5-21-14-21-29V15L32 7Z" fill="#F8FCFC"/>
+  <path d="M32 7 53 15v18c0 15-9 24-21 29-12-5-21-14-21-29V15L32 7Z" fill="none" stroke="#24A8B4" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="32" cy="35" r="12" fill="#FFFFFF" stroke="#24303C" stroke-width="3"/>
+  <path d="M32 23 42 29 34 35Z" fill="#186C9C"/>
+  <path d="M44 34 40 44 34 35Z" fill="#24A8B4"/>
+  <path d="M35 47 25 44 34 35Z" fill="#185490"/>
+  <path d="M21 38 24 28 34 35Z" fill="#24303C"/>
+  <path d="M26 24 36 23 34 35Z" fill="#30B4B4"/>
+  <path d="M45 16v7h5" fill="none" stroke="#24A8B4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="23" r="2.5" fill="#24A8B4"/>
 </svg>

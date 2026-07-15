@@ -1,5 +1,4 @@
 ---
-import Button from "@/components/ui/Button.astro";
 import { whatsappHref } from "@/data/contact";
 ---
 
@@ -15,8 +14,20 @@ import { whatsappHref } from "@/data/contact";
       </p>
     </div>
     <div class="flex flex-col gap-3 sm:flex-row md:flex-col">
-      <Button href={whatsappHref} label="Hablar por WhatsApp" variant="secondary" external />
-      <Button href="/contacto" label="Ir a contacto" variant="ghost" />
+      <a
+        class="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-5 py-3 font-heading text-sm font-semibold text-hk-primary transition duration-200 hover:bg-hk-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Hablar por WhatsApp
+      </a>
+      <a
+        class="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/70 px-5 py-3 font-heading text-sm font-semibold text-white transition duration-200 hover:bg-white hover:text-hk-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="/contacto"
+      >
+        Ir a contacto
+      </a>
     </div>
   </div>
 </section>

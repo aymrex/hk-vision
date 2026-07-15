@@ -1,10 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 112" role="img" aria-label="HK Vision">
-  <rect width="360" height="112" rx="8" fill="#FFFFFF"/>
-  <path d="M30 16h70v39c0 25-16 40-35 48-19-8-35-23-35-48V16z" fill="#1B4F72"/>
-  <path d="M40 26h50v28c0 17-11 28-25 34-14-6-25-17-25-34V26z" fill="#FFFFFF" opacity=".96"/>
-  <path d="M48 40h8v12h17V40h8v31h-8V59H56v12h-8V40z" fill="#2C3E50"/>
-  <path d="M82 40h8L78 56l12 15h-8L70 56 82 40z" fill="#2E86C1"/>
-  <circle cx="92" cy="28" r="7" fill="#3AAED8"/>
-  <text x="126" y="52" fill="#2C3E50" font-family="Arial, sans-serif" font-size="34" font-weight="700">HK Vision</text>
-  <text x="128" y="78" fill="#2E86C1" font-family="Arial, sans-serif" font-size="15" font-weight="600">Seguridad, CCTV, ciberseguridad y software</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 118" role="img" aria-label="HK Vision">
+  <rect width="420" height="118" rx="8" fill="#FFFFFF"/>
+  <g transform="translate(24 13)">
+    <path d="M45 2 82 16v32c0 27-16 42-37 50C24 90 8 75 8 48V16L45 2Z" fill="#F8FCFC"/>
+    <path d="M45 2 82 16v32c0 27-16 42-37 50C24 90 8 75 8 48V16L45 2Z" fill="none" stroke="#185490" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M20 28c15-9 37-10 51-2" fill="none" stroke="#24A8B4" stroke-width="5" stroke-linecap="round"/>
+    <path d="M21 40c13-8 34-9 47-2" fill="none" stroke="#185490" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="45" cy="57" r="18" fill="#FFFFFF" stroke="#24303C" stroke-width="4"/>
+    <path d="M45 39 59 48 47 57Z" fill="#186C9C"/>
+    <path d="M63 51 60 67 47 57Z" fill="#24A8B4"/>
+    <path d="M50 73 34 70 47 57Z" fill="#185490"/>
+    <path d="M28 62 31 46 47 57Z" fill="#24303C"/>
+    <path d="M35 41 50 39 47 57Z" fill="#30B4B4"/>
+    <path d="M67 22v11h7" fill="none" stroke="#24A8B4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M60 20v9h-7" fill="none" stroke="#185490" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="75" cy="33" r="4" fill="#24A8B4"/>
+    <circle cx="53" cy="29" r="4" fill="#185490"/>
+    <circle cx="67" cy="22" r="4" fill="#30B4B4"/>
+  </g>
+  <g transform="translate(122 0)">
+    <text x="0" y="68" fill="#24303C" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="61" font-weight="900" letter-spacing="-3">HK</text>
+    <text x="3" y="88" fill="#24303C" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing=".7">CAMARAS &#8226; INSTALACIONES &#8226; SERVICIO PC</text>
+    <path d="M0 96h206" stroke="#24A8B4" stroke-width="3" stroke-linecap="round"/>
+  </g>
 </svg>
