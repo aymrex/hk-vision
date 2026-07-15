@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@/components/layout/BaseLayout.astro";
+import ContactCTA from "@/components/sections/ContactCTA.astro";
+import Button from "@/components/ui/Button.astro";
+import { whatsappHref } from "@/data/contact";
+import { seo } from "@/data/seo";
+import { getService } from "@/data/services";
+
+const service = getService("automatizaciones");
+---
+
+<BaseLayout title={seo.pages.automatizaciones.title} description={seo.pages.automatizaciones.description}>
+  <section class="section-hk bg-white">
+    <div class="container-hk grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="eyebrow">Automatizaciones</p>
+        <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Menos tareas repetitivas, mas control operativo.</h1>
+        <p class="mt-6 text-lg text-hk-muted">{service?.description}</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href={whatsappHref} label="Cotizar automatizacion" external />
+          <Button href="/contacto" label="Enviar proceso" variant="secondary" />
+        </div>
+      </div>
+      <div class="surface-panel p-7">
+        <h2 class="heading-hk text-2xl">Casos donde aporta</h2>
+        <ul class="mt-6 grid gap-4">
+          {service?.benefits.map((benefit) => <li class="rounded-lg bg-hk-surface p-4 text-hk-text">{benefit}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section-hk bg-hk-surface">
+    <div class="container-hk grid gap-6 md:grid-cols-3">
+      <article class="surface-panel p-6">
+        <h2 class="heading-hk text-xl">Administracion</h2>
+        <p class="mt-3 text-sm text-hk-muted">Ordenar solicitudes, avisos, registros y seguimiento sin depender de tareas manuales.</p>
+      </article>
+      <article class="surface-panel p-6">
+        <h2 class="heading-hk text-xl">Operaciones</h2>
+        <p class="mt-3 text-sm text-hk-muted">Conectar formularios, planillas, correos y alertas para reducir errores repetidos.</p>
+      </article>
+      <article class="surface-panel p-6">
+        <h2 class="heading-hk text-xl">Reporteria</h2>
+        <p class="mt-3 text-sm text-hk-muted">Generar reportes periodicos y avisos para tomar decisiones con informacion actualizada.</p>
+      </article>
+    </div>
+  </section>
+  <ContactCTA />
+</BaseLayout>

@@ -7,6 +7,7 @@ type FormState = "idle" | "loading" | "success" | "error";
 const services = [
   "Instalacion de camaras / CCTV",
   "Ciberseguridad",
+  "Automatizaciones",
   "Desarrollo de software",
   "No estoy seguro, necesito orientacion",
 ];

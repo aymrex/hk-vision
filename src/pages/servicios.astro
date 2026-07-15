@@ -13,9 +13,9 @@ import { services } from "@/data/services";
       <SectionHeader
         eyebrow="Servicios"
         title="Seguridad, tecnologia y software con una mirada integral."
-        description="HK Vision combina soluciones fisicas y digitales para resolver necesidades reales de proteccion, continuidad y gestion."
+        description="HK Vision combina soluciones fisicas, digitales y operativas para resolver necesidades reales de proteccion, continuidad y gestion."
       />
-      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+      <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {services.map((service) => <ServiceCard service={service} />)}
       </div>
     </div>

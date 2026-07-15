@@ -1,6 +1,6 @@
 const siteName = "HK Vision";
 const defaultDescription =
-  "HK Vision ofrece instalacion de camaras de seguridad, CCTV, ciberseguridad y desarrollo de software en Santiago.";
+  "HK Vision ofrece instalacion de camaras de seguridad, CCTV, ciberseguridad, automatizaciones y desarrollo de software en Santiago.";
 
 export const seo = {
   siteName,
@@ -14,7 +14,7 @@ export const seo = {
     servicios: {
       title: `Servicios | ${siteName}`,
       description:
-        "Servicios de instalacion CCTV, ciberseguridad y desarrollo de software para casas, condominios, empresas y bodegas en Santiago.",
+        "Servicios de instalacion CCTV, ciberseguridad, automatizaciones y desarrollo de software para casas, condominios, empresas y bodegas en Santiago.",
     },
     cctv: {
       title: `Instalacion de camaras y CCTV en Santiago | ${siteName}`,
@@ -30,6 +30,11 @@ export const seo = {
       title: `Desarrollo de software en Santiago | ${siteName}`,
       description:
         "Desarrollo de sitios, herramientas internas, automatizaciones e integraciones a medida.",
+    },
+    automatizaciones: {
+      title: `Automatizaciones para empresas en Santiago | ${siteName}`,
+      description:
+        "Automatizacion de procesos, reportes, alertas e integraciones simples para empresas y operaciones en Santiago.",
     },
     sectores: {
       title: `Sectores atendidos | ${siteName}`,

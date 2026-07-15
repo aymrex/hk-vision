@@ -46,16 +46,32 @@ export const services: Service[] = [
     title: "Desarrollo de software",
     eyebrow: "Soluciones a medida",
     summary:
-      "Sitios, herramientas internas, automatizaciones e integraciones para mejorar procesos.",
+      "Sitios, herramientas internas e integraciones para mejorar procesos.",
     description:
       "Construimos software orientado a resolver problemas concretos: captacion, gestion, automatizacion y reporteria.",
     benefits: [
       "Landing pages y sitios corporativos",
-      "Automatizacion de procesos",
       "Integraciones entre sistemas",
       "Herramientas internas simples y mantenibles",
+      "Arquitectura preparada para crecer",
     ],
     href: "/desarrollo-software",
+  },
+  {
+    slug: "automatizaciones",
+    title: "Automatizaciones",
+    eyebrow: "Procesos eficientes",
+    summary:
+      "Automatizacion de tareas repetitivas, flujos operativos, reportes y conexiones entre herramientas.",
+    description:
+      "Creamos automatizaciones practicas para reducir trabajo manual, ordenar informacion y conectar herramientas que hoy funcionan aisladas.",
+    benefits: [
+      "Flujos entre formularios, planillas y correo",
+      "Alertas y recordatorios automaticos",
+      "Reportes operativos periodicos",
+      "Integraciones simples entre plataformas",
+    ],
+    href: "/automatizaciones",
   },
 ];
 
