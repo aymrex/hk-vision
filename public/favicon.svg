@@ -1,13 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HK Vision">
-  <rect width="64" height="64" rx="14" fill="#24303C"/>
-  <path d="M32 7 53 15v18c0 15-9 24-21 29-12-5-21-14-21-29V15L32 7Z" fill="#F8FCFC"/>
-  <path d="M32 7 53 15v18c0 15-9 24-21 29-12-5-21-14-21-29V15L32 7Z" fill="none" stroke="#24A8B4" stroke-width="3" stroke-linejoin="round"/>
-  <circle cx="32" cy="35" r="12" fill="#FFFFFF" stroke="#24303C" stroke-width="3"/>
-  <path d="M32 23 42 29 34 35Z" fill="#186C9C"/>
-  <path d="M44 34 40 44 34 35Z" fill="#24A8B4"/>
-  <path d="M35 47 25 44 34 35Z" fill="#185490"/>
-  <path d="M21 38 24 28 34 35Z" fill="#24303C"/>
-  <path d="M26 24 36 23 34 35Z" fill="#30B4B4"/>
-  <path d="M45 16v7h5" fill="none" stroke="#24A8B4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="23" r="2.5" fill="#24A8B4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HK">
+  <defs>
+    <linearGradient id="hk-fav" x1="10" x2="56" y1="5" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24A8B4"/>
+      <stop offset=".5" stop-color="#186C9C"/>
+      <stop offset="1" stop-color="#185490"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 57 13v21c0 17-9 26-25 33C16 60 7 51 7 34V13L32 4Z" fill="url(#hk-fav)"/>
+  <path d="M32 11 50 18v17c0 12-7 18-18 24-11-6-18-12-18-24V18L32 11Z" fill="#F8FCFC"/>
+  <path d="M32 16 46 21v13c0 9-5 14-14 19-9-5-14-10-14-19V21L32 16Z" fill="url(#hk-fav)"/>
+  <circle cx="32" cy="36" r="15" fill="#F8FCFC"/>
+  <path d="M32 21 44 28 35 36Z" fill="#24303C"/>
+  <path d="M47 34 42 47 35 36Z" fill="#24A8B4"/>
+  <path d="M37 51 23 47 35 36Z" fill="#185490"/>
+  <path d="M17 40 22 27 35 36Z" fill="#24303C"/>
+  <path d="M25 22 37 21 35 36Z" fill="#30B4B4"/>
+  <circle cx="32" cy="36" r="6" fill="#F8FCFC"/>
+  <path d="M47 16v7h5" fill="none" stroke="#F8FCFC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="23" r="2.6" fill="#F8FCFC"/>
 </svg>
