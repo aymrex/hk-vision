@@ -44,7 +44,7 @@ Astro 7 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloud
 
 ## Design System
 
-- Colores: primary `#1B4F72`, primary-mid `#2E86C1`, accent `#3AAED8`, text `#2C3E50`, background `#FFFFFF`.
+- Colores: primary `#185490`, primary-mid `#186C9C`, accent teal `#24A8B4`, grafito `#24303C`, fondo `#FFFFFF` y superficie `#F4FAFA`.
 - Tipografia: Lexend para titulares, Source Sans 3 para cuerpo.
 - Estilo: corporativo, elegante, tecnico y confiable.
 - Animacion: sobria, intencional, respetando `prefers-reduced-motion`.
@@ -56,3 +56,4 @@ Astro 7 + TypeScript + Tailwind CSS v4 + Three.js + React islands + Vercel/Cloud
 3. La paleta HK debe mantenerse consistente.
 4. El 3D debe reforzar seguridad y tecnologia; nunca bloquear contenido.
 5. Mobile es prioridad para captacion de leads.
+6. No agregar chatbot de IA al sitio; cualquier experiencia conversacional futura se evaluara directamente en WhatsApp.

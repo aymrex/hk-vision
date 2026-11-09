@@ -3,6 +3,8 @@
 > Generado por The Architect el 2026-07-06  
 > Arquetipo: Marketing / Landing Page corporativa multipagina
 
+> Decision de producto (2026-11-09): el sitio no incorporara un chatbot de IA. Si se implementa una experiencia conversacional automatizada, se evaluara en WhatsApp. Los datos reales de contacto se definiran mas adelante.
+
 ## 1. Project Overview
 
 ### Vision
@@ -212,14 +214,15 @@ contacto.astro
 
 | Role | Hex | Usage |
 | --- | --- | --- |
-| Primary | `#1B4F72` | Autoridad, headers, fondos fuertes, elementos de confianza. |
-| Primary Mid | `#2E86C1` | Botones primarios, links activos, CTAs. |
-| Accent | `#3AAED8` | Brillos tecnologicos, detalles 3D, estados hover. |
-| Text | `#2C3E50` | Texto principal. |
+| Primary | `#185490` | Autoridad, headers, fondos fuertes, elementos de confianza. |
+| Primary Mid | `#186C9C` | Botones primarios, links activos, CTAs. |
+| Accent | `#24A8B4` | Teal de marca, detalles 3D y estados de foco. |
+| Accent Bright | `#30B4B4` | Brillos y detalles del escudo. |
+| Text | `#24303C` | Grafito del logo y texto principal. |
 | Background | `#FFFFFF` | Fondo base. |
-| Surface | `#F6FAFD` | Secciones alternadas y superficies suaves. |
-| Border | `#D8E6EF` | Separadores, tarjetas, campos. |
-| Muted Text | `#5D6D7E` | Texto secundario. |
+| Surface | `#F4FAFA` | Secciones alternadas y superficies suaves. |
+| Border | `#D7E5E8` | Separadores, tarjetas, campos. |
+| Muted Text | `#53636D` | Texto secundario. |
 | Success | `#1E8E5A` | Confirmaciones de formulario. |
 | Destructive | `#C0392B` | Errores de formulario. |
 

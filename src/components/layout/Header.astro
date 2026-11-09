@@ -34,7 +34,7 @@ const navItems = [
       <a class="rounded-lg border border-hk-border px-4 py-2 font-heading text-sm font-semibold text-hk-primary transition hover:border-hk-accent" href="tel:+56900000000">
         Llamar
       </a>
-      <a class="rounded-lg bg-hk-primary-mid px-4 py-2 font-heading text-sm font-semibold text-white transition hover:bg-hk-primary" href={whatsappHref} target="_blank" rel="noreferrer">
+      <a class="rounded-lg bg-hk-primary-mid px-4 py-2 font-heading text-sm font-semibold text-white on-primary transition hover:bg-hk-primary" href={whatsappHref} target="_blank" rel="noreferrer">
         WhatsApp
       </a>
     </div>
@@ -45,8 +45,8 @@ const navItems = [
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden border-t border-hk-border bg-white lg:hidden" aria-label="Navegacion movil">
-    <div class="container-hk grid gap-2 py-5">
+  <nav id="mobile-menu" class="hidden absolute right-5 top-full z-50 w-[min(20rem,calc(100vw-2.5rem))] origin-top-right rounded-b-lg border border-t-0 border-hk-border bg-white shadow-[var(--shadow-soft)] lg:hidden" aria-label="Navegacion movil">
+    <div class="grid gap-2 p-4 text-right">
       {
         navItems.map((item) => (
           <a class="rounded-lg px-3 py-3 font-heading font-semibold text-hk-text hover:bg-hk-surface" href={item.href}>
@@ -54,7 +54,7 @@ const navItems = [
           </a>
         ))
       }
-      <a class="mt-2 rounded-lg bg-hk-primary-mid px-4 py-3 text-center font-heading font-semibold text-white" href={whatsappHref} target="_blank" rel="noreferrer">
+      <a class="mt-2 rounded-lg bg-hk-primary-mid px-4 py-3 text-center font-heading font-semibold text-white on-primary" href={whatsappHref} target="_blank" rel="noreferrer">
         Cotizar por WhatsApp
       </a>
     </div>

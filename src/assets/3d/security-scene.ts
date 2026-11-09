@@ -5,18 +5,14 @@ export function initSecurityScene(canvas: HTMLCanvasElement) {
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
-  if (prefersReducedMotion) {
-    canvas.closest("[data-scene-wrap]")?.classList.add("is-reduced-motion");
-    return () => undefined;
-  }
-
   const renderer = new THREE.WebGLRenderer({
     canvas,
-    antialias: true,
+    antialias: window.innerWidth > 700,
     alpha: true,
-    powerPreference: "high-performance",
+    powerPreference: "low-power",
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
+  const pixelRatio = () => Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1 : 1.5);
+  renderer.setPixelRatio(pixelRatio());
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
@@ -66,8 +62,8 @@ export function initSecurityScene(canvas: HTMLCanvasElement) {
     [0.25, -1.55, 0.3],
   ].map(([x, y, z]) => new THREE.Vector3(x, y, z));
 
-  const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x3aaed8 });
-  const nodeGeometry = new THREE.SphereGeometry(0.085, 18, 18);
+  const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x24a8b4 });
+  const nodeGeometry = new THREE.SphereGeometry(0.085, 12, 12);
 
   nodes.forEach((node) => {
     const mesh = new THREE.Mesh(nodeGeometry, nodeMaterial);
@@ -76,7 +72,7 @@ export function initSecurityScene(canvas: HTMLCanvasElement) {
   });
 
   const lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x3aaed8,
+    color: 0x24a8b4,
     transparent: true,
     opacity: 0.45,
   });
@@ -97,7 +93,7 @@ export function initSecurityScene(canvas: HTMLCanvasElement) {
     group.add(line);
   });
 
-  const ringGeometry = new THREE.TorusGeometry(2.85, 0.01, 8, 120);
+  const ringGeometry = new THREE.TorusGeometry(2.85, 0.01, 6, 72);
   const ringMaterial = new THREE.MeshBasicMaterial({
     color: 0x2e86c1,
     transparent: true,
@@ -114,30 +110,70 @@ export function initSecurityScene(canvas: HTMLCanvasElement) {
 
   const resize = () => {
     const rect = canvas.getBoundingClientRect();
+    renderer.setPixelRatio(pixelRatio());
     renderer.setSize(rect.width, rect.height, false);
     camera.aspect = rect.width / Math.max(rect.height, 1);
     camera.updateProjectionMatrix();
   };
 
   let frame = 0;
+  let visible = true;
+  let previousFrame = 0;
+  const reducedMotion = prefersReducedMotion;
   const animate = () => {
+    if (!visible || document.hidden || reducedMotion) {
+      frame = 0;
+      return;
+    }
     frame = requestAnimationFrame(animate);
     const time = performance.now() * 0.0004;
-    group.rotation.y = Math.sin(time) * 0.28;
-    group.rotation.x = Math.cos(time * 0.7) * 0.08;
-    group.position.y = Math.sin(time * 1.6) * 0.08;
-    renderer.render(scene, camera);
+    if (time - previousFrame >= 0.033) {
+      group.rotation.y = Math.sin(time) * 0.28;
+      group.rotation.x = Math.cos(time * 0.7) * 0.08;
+      group.position.y = Math.sin(time * 1.6) * 0.08;
+      previousFrame = time;
+      renderer.render(scene, camera);
+    }
   };
 
   resize();
-  animate();
+  if (reducedMotion) {
+    renderer.render(scene, camera);
+  } else {
+    animate();
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible && !reducedMotion && !frame) animate();
+    if (!visible && frame) {
+      cancelAnimationFrame(frame);
+      frame = 0;
+    }
+  });
+  observer.observe(canvas);
   window.addEventListener("resize", resize);
+  const handleVisibility = () => {
+    if (document.hidden && frame) {
+      cancelAnimationFrame(frame);
+      frame = 0;
+    } else if (!document.hidden && visible && !reducedMotion && !frame) {
+      animate();
+    }
+  };
+  document.addEventListener("visibilitychange", handleVisibility);
 
   return () => {
     cancelAnimationFrame(frame);
+    observer.disconnect();
     window.removeEventListener("resize", resize);
+    document.removeEventListener("visibilitychange", handleVisibility);
+    scene.traverse((object) => {
+      if (object instanceof THREE.Mesh || object instanceof THREE.Line) {
+        object.geometry.dispose();
+        const materials = Array.isArray(object.material) ? object.material : [object.material];
+        materials.forEach((material) => material.dispose());
+      }
+    });
     renderer.dispose();
-    nodeGeometry.dispose();
-    ringGeometry.dispose();
   };
 }

@@ -1,30 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1b4f72;
-  --color-primary-mid: #2e86c1;
-  --color-accent: #3aaed8;
-  --color-text: #2c3e50;
-  --color-muted: #5d6d7e;
+  --color-primary: #185490;
+  --color-primary-mid: #186c9c;
+  --color-accent: #24a8b4;
+  --color-text: #24303c;
+  --color-muted: #53636d;
   --color-background: #ffffff;
-  --color-surface: #f6fafd;
-  --color-border: #d8e6ef;
+  --color-surface: #f4fafa;
+  --color-border: #d7e5e8;
   --color-success: #1e8e5a;
   --color-danger: #c0392b;
-  --shadow-soft: 0 18px 55px rgba(27, 79, 114, 0.11);
+  --shadow-soft: 0 18px 55px rgba(24, 84, 144, 0.11);
   color-scheme: light;
 }
 
 @theme {
+  --color-white: #ffffff;
   --font-heading: "Lexend", sans-serif;
   --font-body: "Source Sans 3", sans-serif;
-  --color-hk-primary: #1b4f72;
-  --color-hk-primary-mid: #2e86c1;
-  --color-hk-accent: #3aaed8;
-  --color-hk-text: #2c3e50;
-  --color-hk-muted: #5d6d7e;
-  --color-hk-surface: #f6fafd;
-  --color-hk-border: #d8e6ef;
+  --color-hk-primary: #185490;
+  --color-hk-primary-mid: #186c9c;
+  --color-hk-accent: #24a8b4;
+  --color-hk-teal-bright: #30b4b4;
+  --color-hk-text: #24303c;
+  --color-hk-muted: #53636d;
+  --color-hk-surface: #f4fafa;
+  --color-hk-border: #d7e5e8;
 }
 
 * {
@@ -94,6 +96,10 @@ select {
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0;
+}
+
+.on-primary {
+  color: #ffffff;
 }
 
 .text-balance {
