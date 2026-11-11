@@ -16,7 +16,7 @@ const service = getService("cctv");
       <div>
         <BackLink fallback="/servicios" />
         <p class="eyebrow">CCTV en Santiago</p>
-        <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Instalacion de camaras de seguridad y CCTV.</h1>
+        <h1 class="heading-hk mt-4 text-4xl md:text-6xl">Instalación de cámaras de seguridad y CCTV.</h1>
         <p class="mt-6 text-lg text-hk-muted">{service?.description}</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href={whatsappHref} label="Cotizar CCTV" external />
@@ -24,7 +24,7 @@ const service = getService("cctv");
         </div>
       </div>
       <div class="surface-panel p-7">
-        <h2 class="heading-hk text-2xl">Que se considera</h2>
+        <h2 class="heading-hk text-2xl">Qué se considera</h2>
         <ul class="mt-6 grid gap-4">
           {service?.benefits.map((benefit) => <li class="rounded-lg bg-hk-surface p-4 text-hk-text">{benefit}</li>)}
         </ul>

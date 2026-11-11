@@ -1,6 +1,6 @@
 const siteName = "HK Vision";
 const defaultDescription =
-  "HK Vision ofrece instalacion de camaras de seguridad, CCTV, ciberseguridad, automatizaciones y desarrollo de software en Santiago.";
+  "HK Vision ofrece instalación de cámaras de seguridad, CCTV, ciberseguridad, automatizaciones y desarrollo de software en Santiago.";
 
 export const seo = {
   siteName,
@@ -8,23 +8,23 @@ export const seo = {
   defaultDescription,
   pages: {
     home: {
-      title: `${siteName} | Camaras de seguridad, CCTV y software en Santiago`,
+      title: `${siteName} | Cámaras de seguridad, CCTV y software en Santiago`,
       description: defaultDescription,
     },
     servicios: {
       title: `Servicios | ${siteName}`,
       description:
-        "Servicios de instalacion CCTV, ciberseguridad, automatizaciones y desarrollo de software para casas, condominios, empresas y bodegas en Santiago.",
+        "Servicios de instalación CCTV, ciberseguridad, automatizaciones y desarrollo de software para casas, condominios, empresas y bodegas en Santiago.",
     },
     cctv: {
-      title: `Instalacion de camaras y CCTV en Santiago | ${siteName}`,
+      title: `Instalación de cámaras y CCTV en Santiago | ${siteName}`,
       description:
-        "Cotiza instalacion de camaras de seguridad y CCTV en Santiago para casas, condominios, empresas y bodegas.",
+        "Cotiza instalación de cámaras de seguridad y CCTV en Santiago para casas, condominios, empresas y bodegas.",
     },
     ciberseguridad: {
       title: `Ciberseguridad para empresas en Santiago | ${siteName}`,
       description:
-        "Servicios de ciberseguridad practicos para proteger accesos, redes, equipos y operaciones empresariales.",
+        "Servicios de ciberseguridad prácticos para proteger accesos, redes, equipos y operaciones empresariales.",
     },
     software: {
       title: `Desarrollo de software en Santiago | ${siteName}`,
@@ -34,22 +34,22 @@ export const seo = {
     automatizaciones: {
       title: `Automatizaciones para empresas en Santiago | ${siteName}`,
       description:
-        "Automatizacion de procesos, reportes, alertas e integraciones simples para empresas y operaciones en Santiago.",
+        "Automatización de procesos, reportes, alertas e integraciones simples para empresas y operaciones en Santiago.",
     },
     sectores: {
       title: `Sectores atendidos | ${siteName}`,
       description:
-        "Soluciones de seguridad y tecnologia para casas, condominios, empresas y bodegas en Santiago.",
+        "Soluciones de seguridad y tecnología para casas, condominios, empresas y bodegas en Santiago.",
     },
     nosotros: {
       title: `Nosotros | ${siteName}`,
       description:
-        "Conoce el enfoque de HK Vision: seguridad, tecnologia y desarrollo con criterio tecnico.",
+        "Conoce el enfoque de HK Vision: seguridad, tecnología y desarrollo con criterio técnico.",
     },
     contacto: {
       title: `Contacto | ${siteName}`,
       description:
-        "Contacta a HK Vision por WhatsApp, telefono, correo o formulario para cotizar en Santiago.",
+        "Contacta a HK Vision por WhatsApp, teléfono, correo o formulario para cotizar en Santiago.",
     },
   },
 };

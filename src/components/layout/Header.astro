@@ -20,10 +20,17 @@ const navItems = [
       <img src="/images/logo-hk-reference.png" alt="HK" class="h-14 w-auto rounded-full" />
     </a>
 
-    <nav class="hidden items-center gap-7 lg:flex" aria-label="Navegacion principal">
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Navegación principal">
       {
         navItems.map((item) => (
-          <a class="font-heading text-sm font-semibold text-hk-text transition hover:text-hk-primary-mid" href={item.href}>
+          <a
+            class:list={[
+              "font-heading text-sm font-semibold text-hk-text transition hover:text-hk-primary-mid",
+              Astro.url.pathname === item.href && "text-hk-primary-mid",
+            ]}
+            href={item.href}
+            aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+          >
             {item.label}
           </a>
         ))
@@ -39,17 +46,24 @@ const navItems = [
       </a>
     </div>
 
-    <button id="menu-toggle" class="inline-flex size-11 items-center justify-center rounded-lg border border-hk-border text-hk-primary lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+    <button id="menu-toggle" class="inline-flex size-11 items-center justify-center rounded-lg border border-hk-border text-hk-primary lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
       <Menu class="menu-open" size={22} aria-hidden="true" />
       <X class="menu-close hidden" size={22} aria-hidden="true" />
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden absolute right-5 top-full z-50 w-[min(20rem,calc(100vw-2.5rem))] origin-top-right rounded-b-lg border border-t-0 border-hk-border bg-white shadow-[var(--shadow-soft)] lg:hidden" aria-label="Navegacion movil">
+  <nav id="mobile-menu" class="hidden absolute right-5 top-full z-50 w-[min(20rem,calc(100vw-2.5rem))] origin-top-right rounded-b-lg border border-t-0 border-hk-border bg-white shadow-[var(--shadow-soft)] lg:hidden" aria-label="Navegación móvil">
     <div class="grid gap-2 p-4 text-center">
       {
         navItems.map((item) => (
-          <a class="rounded-lg px-3 py-3 font-heading font-semibold text-hk-text hover:bg-hk-surface" href={item.href}>
+          <a
+            class:list={[
+              "rounded-lg px-3 py-3 font-heading font-semibold text-hk-text hover:bg-hk-surface",
+              Astro.url.pathname === item.href && "text-hk-primary-mid",
+            ]}
+            href={item.href}
+            aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+          >
             {item.label}
           </a>
         ))
@@ -67,11 +81,41 @@ const navItems = [
   const openIcon = document.querySelector(".menu-open");
   const closeIcon = document.querySelector(".menu-close");
 
+  const setMenuOpen = (isOpen: boolean) => {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    menu.classList.toggle("hidden", !isOpen);
+    openIcon?.classList.toggle("hidden", isOpen);
+    closeIcon?.classList.toggle("hidden", !isOpen);
+  };
+
   toggle?.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    menu?.classList.toggle("hidden", expanded);
-    openIcon?.classList.toggle("hidden", !expanded);
-    closeIcon?.classList.toggle("hidden", expanded);
+    setMenuOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle?.getAttribute("aria-expanded") === "true") {
+      setMenuOpen(false);
+      toggle.focus();
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (
+      event.target instanceof Node &&
+      !menu?.contains(event.target) &&
+      !toggle?.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  });
+
+  window.matchMedia("(min-width: 64rem)").addEventListener("change", (event) => {
+    if (event.matches) setMenuOpen(false);
   });
 </script>

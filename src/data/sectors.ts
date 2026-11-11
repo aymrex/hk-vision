@@ -12,11 +12,11 @@ export const sectors = [
   {
     title: "Empresas",
     summary:
-      "Seguridad fisica y digital para oficinas, equipos, redes y procesos internos.",
+      "Seguridad física y digital para oficinas, equipos, redes y procesos internos.",
   },
   {
     title: "Bodegas",
     summary:
-      "Control visual de perimetros, zonas de carga, inventario y horarios criticos.",
+      "Control visual de perímetros, zonas de carga, inventario y horarios críticos.",
   },
 ];

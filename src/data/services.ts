@@ -11,15 +11,15 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "cctv",
-    title: "Instalacion de camaras y CCTV",
-    eyebrow: "Seguridad fisica",
+    title: "Instalación de cámaras y CCTV",
+    eyebrow: "Seguridad física",
     summary:
-      "Diseno e instalacion de sistemas de vigilancia para casas, condominios, empresas y bodegas.",
+      "Diseño e instalación de sistemas de vigilancia para casas, condominios, empresas y bodegas.",
     description:
-      "Implementamos soluciones de CCTV con criterio tecnico: cobertura, puntos criticos, grabacion, acceso remoto y escalabilidad.",
+      "Implementamos soluciones de CCTV con criterio técnico: cobertura, puntos críticos, grabación, acceso remoto y escalabilidad.",
     benefits: [
-      "Evaluacion de puntos vulnerables",
-      "Camara adecuada segun zona y exposicion",
+      "Evaluación de puntos vulnerables",
+      "Cámara adecuada según zona y exposición",
       "Acceso remoto desde celular",
       "Orden tecnico en cableado y configuracion",
     ],
@@ -28,16 +28,16 @@ export const services: Service[] = [
   {
     slug: "ciberseguridad",
     title: "Ciberseguridad",
-    eyebrow: "Proteccion digital",
+    eyebrow: "Protección digital",
     summary:
-      "Medidas practicas para reducir riesgos digitales en redes, cuentas, equipos y operaciones.",
+      "Medidas prácticas para reducir riesgos digitales en redes, cuentas, equipos y operaciones.",
     description:
-      "Ayudamos a empresas y equipos a proteger accesos, redes y procesos criticos sin caer en soluciones innecesariamente complejas.",
+      "Ayudamos a empresas y equipos a proteger accesos, redes y procesos críticos sin caer en soluciones innecesariamente complejas.",
     benefits: [
       "Revision de accesos y configuraciones",
-      "Buenas practicas para equipos de trabajo",
-      "Proteccion de red y dispositivos",
-      "Orientacion para continuidad operativa",
+      "Buenas prácticas para equipos de trabajo",
+      "Protección de red y dispositivos",
+      "Orientación para continuidad operativa",
     ],
     href: "/ciberseguridad",
   },
@@ -48,7 +48,7 @@ export const services: Service[] = [
     summary:
       "Sitios, herramientas internas e integraciones para mejorar procesos.",
     description:
-      "Construimos software orientado a resolver problemas concretos: captacion, gestion, automatizacion y reporteria.",
+      "Construimos software orientado a resolver problemas concretos: captación, gestión, automatización y reportería.",
     benefits: [
       "Landing pages y sitios corporativos",
       "Integraciones entre sistemas",
@@ -62,13 +62,13 @@ export const services: Service[] = [
     title: "Automatizaciones",
     eyebrow: "Procesos eficientes",
     summary:
-      "Automatizacion de tareas repetitivas, flujos operativos, reportes y conexiones entre herramientas.",
+      "Automatización de tareas repetitivas, flujos operativos, reportes y conexiones entre herramientas.",
     description:
-      "Creamos automatizaciones practicas para reducir trabajo manual, ordenar informacion y conectar herramientas que hoy funcionan aisladas.",
+      "Creamos automatizaciones prácticas para reducir trabajo manual, ordenar información y conectar herramientas que hoy funcionan aisladas.",
     benefits: [
       "Flujos entre formularios, planillas y correo",
       "Alertas y recordatorios automaticos",
-      "Reportes operativos periodicos",
+      "Reportes operativos periódicos",
       "Integraciones simples entre plataformas",
     ],
     href: "/automatizaciones",

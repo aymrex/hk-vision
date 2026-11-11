@@ -5,11 +5,11 @@ import { contact } from "@/data/contact";
 type FormState = "idle" | "loading" | "success" | "error";
 
 const services = [
-  "Instalacion de camaras / CCTV",
+  "Instalación de cámaras / CCTV",
   "Ciberseguridad",
   "Automatizaciones",
   "Desarrollo de software",
-  "No estoy seguro, necesito orientacion",
+  "No estoy seguro, necesito orientación",
 ];
 
 export default function ContactForm() {
@@ -34,7 +34,7 @@ export default function ContactForm() {
 
     const subject = encodeURIComponent(`Solicitud HK Vision - ${service}`);
     const body = encodeURIComponent(
-      `Nombre: ${name}\nCorreo: ${email || "No indicado"}\nTelefono: ${
+      `Nombre: ${name}\nCorreo: ${email || "No indicado"}\nTeléfono: ${
         phone || "No indicado"
       }\nServicio: ${service}\n\nMensaje:\n${requestMessage}`,
     );
@@ -83,7 +83,7 @@ export default function ContactForm() {
         </div>
         <div className="grid gap-2">
           <label className="font-heading text-sm font-semibold text-hk-primary" htmlFor="phone">
-            Telefono
+            Teléfono
           </label>
           <input
             className="min-h-12 rounded-lg border border-hk-border px-4 text-hk-text outline-hk-accent"
@@ -107,7 +107,7 @@ export default function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>
-            Selecciona una opcion
+            Selecciona una opción
           </option>
           {services.map((service) => (
             <option key={service} value={service}>
@@ -127,7 +127,7 @@ export default function ContactForm() {
           name="message"
           required
           minLength={10}
-          placeholder="Cuentanos que necesitas proteger o resolver."
+          placeholder="Cuéntanos qué necesitas proteger o resolver."
         />
       </div>
 
