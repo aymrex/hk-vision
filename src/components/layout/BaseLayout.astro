@@ -15,6 +15,7 @@ const {
   description = seo.defaultDescription,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://hkvision.cl").toString();
+const isContactPage = Astro.url.pathname.replace(/\/+$/, "") === "/contacto";
 ---
 
 <!doctype html>
@@ -44,6 +45,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://hkvision.cl
       <slot />
     </main>
     <Footer />
-    <FloatingWhatsApp />
+    {!isContactPage && <FloatingWhatsApp />}
   </body>
 </html>
