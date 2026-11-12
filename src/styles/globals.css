@@ -102,6 +102,19 @@ select {
   color: #ffffff;
 }
 
+.contact-cta-primary {
+  color: #185490;
+}
+
+.contact-cta-secondary {
+  color: #ffffff;
+}
+
+.contact-cta-secondary:hover {
+  background-color: #ffffff;
+  color: #185490;
+}
+
 .text-balance {
   text-wrap: balance;
 }
